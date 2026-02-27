@@ -1,0 +1,15 @@
+<div class="page-container">
+  <h2 class="section-title">Categorie in evidenza</h2>
+  <div class="book-grid">
+    <div class="book-card" *ngFor="let book of books">
+      <a [routerLink]="['/book', book.id]">
+        <img [src]="book.coverUrl" [alt]="book.title" class="book-cover">
+        <div class="book-info">
+          <p class="book-title">{{ book.title }}</p>
+          <p class="book-author">{{ book.author }}</p>
+          <p class="book-price">{{ book.price | currency:'EUR' }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
