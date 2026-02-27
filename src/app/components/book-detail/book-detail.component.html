@@ -1,0 +1,46 @@
+<div class="detail-container" *ngIf="book; else notFound">
+
+  <div class="detail-left">
+    <img [src]="book.coverUrl" [alt]="book.title" class="cover-img">
+    <button class="btn-read">Leggi estratto</button>
+  </div>
+
+  <div class="detail-center">
+    <h1 class="book-title">{{ book.title }}</h1>
+    <p class="book-author">di <a>{{ book.author }}</a></p>
+
+    <div class="rating">
+      <span class="stars">{{ getStars(book.rating) }}</span>
+      <span class="rating-value">{{ book.rating }}</span>
+      <span class="reviews">({{ book.reviews | number }} recensioni)</span>
+    </div>
+
+    <p class="reading-time">{{ book.readingTimeMinutes | readingTime }}</p>
+
+    <p class="description">{{ book.description }}</p>
+
+    <div class="book-meta">
+      <span><strong>Pagine:</strong> {{ book.pages }}</span>
+      <span><strong>Lingua:</strong> {{ book.language }}</span>
+      <span><strong>Editore:</strong> {{ book.publisher }}</span>
+    </div>
+
+    <!-- Componente figlio - riceve i formati dal padre -->
+    <app-format-selector [formats]="formats"></app-format-selector>
+  </div>
+
+  <div class="detail-right">
+    <div class="price-box">
+      <p class="discount">-{{ getDiscount() }}%</p>
+      <p class="price">{{ book.price | currency:'EUR' }}</p>
+      <p class="original-price">Prezzo di copertina: <s>{{ book.originalPrice | currency:'EUR' }}</s></p>
+      <button class="btn-buy">Acquista adesso con 1-Click</button>
+      <button class="btn-gift">Acquista come regalo</button>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #notFound>
+  <p style="text-align:center; margin-top: 40px;">Libro non trovato.</p>
+</ng-template>
