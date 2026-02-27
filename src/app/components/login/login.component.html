@@ -1,0 +1,52 @@
+<div class="login-container">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="login-logo">
+
+  <div class="login-box">
+    <h2>Accedi</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email">E-mail o numero di cellulare</label>
+        <input
+          id="email"
+          type="text"
+          formControlName="email"
+          [class.input-error]="submitted && email?.invalid">
+        <p class="error-msg" *ngIf="submitted && email?.errors?.['required']">
+          Inserisci la tua email.
+        </p>
+        <p class="error-msg" *ngIf="submitted && email?.errors?.['email']">
+          Formato email non valido.
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          [class.input-error]="submitted && password?.invalid">
+        <p class="error-msg" *ngIf="submitted && password?.errors?.['required']">
+          Inserisci la password.
+        </p>
+        <p class="error-msg" *ngIf="submitted && password?.errors?.['minlength']">
+          La password deve essere di almeno 6 caratteri.
+        </p>
+      </div>
+
+      <button type="submit" class="btn-login">Continua</button>
+
+    </form>
+
+    <p class="terms">
+      Continuando, accetti le <a href="#">Condizioni d'uso</a> e
+      l'<a href="#">Informativa sulla privacy</a> di Amazon.
+    </p>
+
+    <hr>
+
+    <p class="new-user">Nuovo cliente? <a routerLink="/">Inizia qui</a></p>
+  </div>
+</div>
