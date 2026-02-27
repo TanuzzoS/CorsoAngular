@@ -1,0 +1,12 @@
+<div class="format-section">
+  <h3>Seleziona formato</h3>
+  <div class="format-list">
+    <div
+      class="format-item"
+      *ngFor="let format of formats"
+      appHighlightFormat>
+      <p class="format-label">{{ format.label }}</p>
+      <p class="format-price">{{ format.price | currency:'EUR' }}</p>
+    </div>
+  </div>
+</div>

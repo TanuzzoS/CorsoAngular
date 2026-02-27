@@ -1,0 +1,38 @@
+.format-section {
+  margin-top: 20px;
+}
+
+.format-section h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.format-list {
+  display: flex;
+  gap: 12px;
+}
+
+.format-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.format-item:hover {
+  border-color: #e47911;
+}
+
+.format-label {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.format-price {
+  color: #B12704;
+  font-size: 13px;
+  margin: 4px 0 0;
+}
