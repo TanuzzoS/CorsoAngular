@@ -1,0 +1,27 @@
+<header class="navbar-top">
+  <div class="navbar-logo">
+    <a routerLink="/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" height="35">
+    </a>
+  </div>
+
+  <div class="navbar-search">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Cerca su Amazon.it" />
+    <button>🔍</button>
+  </div>
+
+  <div class="navbar-actions">
+    <a routerLink="/login" class="nav-link">Ciao, accedi<br><strong>Account e Liste</strong></a>
+    <a routerLink="/" class="nav-link">Resi<br><strong>e Ordini</strong></a>
+    <a routerLink="/" class="nav-link cart-icon">🛒 <span>0</span></a>
+  </div>
+</header>
+
+<nav class="navbar-bottom">
+  <a routerLink="/">Tutti</a>
+  <a routerLink="/">Libri</a>
+  <a routerLink="/">Bestseller</a>
+  <a routerLink="/">Novità</a>
+  <a routerLink="/">Offerte</a>
+  <a routerLink="/">Prime</a>
+</nav>
